@@ -1,33 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
-//these are what were added
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-public class BoothAlgorithm : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+public class BoothAlgorithm : MonoBehaviour
+{
 
-    static void Main(string[] args)
+    // Use this for initialization
+    void Start()
     {
+
         string A = "0000";
         string M, Q;
         string Q_1 = "0";
 
-        Console.Write("Please enter a 4 bit Multiplicant = ");
-        M = Console.ReadLine();
+        //Console.Write("Please enter a 4 bit Multiplicant = ");
+        Debug.Log("Please enter a 4 bit Multiplicant = ");
+        M = "0011";
 
-        Console.Write("Please enter a  4 bit Multiplier = ");
-        Q = Console.ReadLine();
+        //Console.Write("Please enter a  4 bit Multiplier = ");
+        Debug.Log("Please enter a  4 bit Multiplier = ");
+        Q = "1100";
 
         for (int i = 0; i < 4; i++)
         {
@@ -66,10 +58,9 @@ public class BoothAlgorithm : MonoBehaviour {
             }
         }
 
-        Console.WriteLine("\n\nA = {0}, Q = {1}, Q_1 = {2} ", A, Q, Q_1);
+        Debug.Log("A = " + A + " , Q = " + Q + " , Q_1 = " + Q_1);
+    }
 
-    } 
-    
     static string Add(string A, string M)
     {
         string answer;
