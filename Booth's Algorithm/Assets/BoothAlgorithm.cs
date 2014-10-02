@@ -19,18 +19,32 @@ public class BoothAlgorithm : MonoBehaviour
         string M, Q;
         string Q_1 = "0";
 
+        M = input1.GetComponent<Text>().text;
+        Q = input2.GetComponent<Text>().text;
+
+        //Vars to test if inputs are signed 8 bits
+        int Testi1 = System.Convert.ToInt16(M, 10);
+        int Testi2 = System.Convert.ToInt16(Q, 10);
+
         //Console.Write("Please enter a 8 bit Multiplicant = ");
         //Debug.Log("Please enter a 8 bit Multiplicant = ");
         if (input1.GetComponent<Text>().text == "" || input2.GetComponent<Text>().text == "")
         {
-            output.GetComponent<Text>().text += "Incorrect Inputs : Retry";
+            output.GetComponent<Text>().text += "One or more inputs are incomplete : Retry";
+            this.enabled = false;
+        }
+        else if (Testi1 < -128 || Testi1 > 127)
+        {
+            output.GetComponent<Text>().text += "Input 1 is out of range : Retry";
+            this.enabled = false;
+        }
+        else if (Testi2 < -128 || Testi2 > 127)
+        {
+            output.GetComponent<Text>().text += "Input 2 is out of range : Retry";
             this.enabled = false;
         }
         else
         {
-            M = input1.GetComponent<Text>().text;
-            Q = input2.GetComponent<Text>().text;
-
             int CorrectAnswer = System.Convert.ToSByte(M) * System.Convert.ToSByte(Q);
             output.GetComponent<Text>().text += "\nfirst number = " + M;
             sbyte i1 = System.Convert.ToSByte(M, 10);
