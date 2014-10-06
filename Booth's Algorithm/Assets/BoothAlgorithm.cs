@@ -416,7 +416,9 @@ public class BoothAlgorithm : MonoBehaviour
         return answer;
     }
 
-    static string Subtract(string A, string M)
+
+    /*
+    static string Subtract(string A, string M) // Replaced with using twos compliment and addition
     {
         bool shift = false;
         char bin0 = '0', bin1 = '0', bin2 = '0', bin3 = '0', bin4 = '0', bin5 = '0', bin6 = '0', bin7 = '0';
@@ -514,5 +516,5 @@ public class BoothAlgorithm : MonoBehaviour
         string ans = bin0.ToString() + bin1.ToString() + bin2.ToString() + bin3.ToString() + bin4.ToString() + bin5.ToString() + bin6.ToString() + bin7.ToString();
 
         return ans;
-    }
+    }*/
 }
